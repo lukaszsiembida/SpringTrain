@@ -19,6 +19,7 @@
         <tr>
             <td>Producent</td>
             <td>Model</td>
+            <td>Kraj produkcji</td>
             <td>Vin</td>
             <td>Rok produkcji</td>
             <td>Ubezpieczenie od</td>
@@ -30,6 +31,14 @@
         <tr th:each="car, iterStat : ${cars}" th:class="${iterStat.isOdd()}? 'odd': 'even'"> <!-- pętla thymeleaf , iterStat dodatkowe-->
             <td><span th:text="${car.manufacturer}"/></td>
             <td><span th:text="${car.model}"/></td>
+            <td>
+                <div th:switch="${car.manufacturer}"</div>
+                <span th:case="Opel">Niemcy</span>
+                <span th:case="VW">Niemcy</span>
+                <span th:case="Fiat">Włochy</span>
+                <span th:case="Ford">USA</span>
+                <span th:case="*">Brak informacji</span> <!-- * oznacza warunek dowolny -->
+            </td>
             <td><span th:text="${car.vin}"/></td>
             <td><span th:text="${car.yearOfProduction}"/></td>
             <td><span th:text="${car.insuredFrom}"/></td>
