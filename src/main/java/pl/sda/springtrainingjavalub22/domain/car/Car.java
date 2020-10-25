@@ -21,7 +21,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 public class Car {
-    @Setter
+
     private Long id;
     @NotBlank(message = "Manufacturer should be not blank")
     private String manufacturer;

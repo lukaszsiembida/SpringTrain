@@ -38,7 +38,7 @@ public class DatebaseCarRepository implements CarRepository {
 
     @Override
     public void update(Car car) {
-        if(jpaCarRepository.existsById(car.getId())) {
+        if(!jpaCarRepository.existsById(car.getId())) {
             throw new IllegalStateException("Updated object not exist");
         }
         jpaCarRepository.save(toEntity(car));
