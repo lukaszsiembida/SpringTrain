@@ -57,4 +57,9 @@ public class CarController {
         return "redirect:/mvc/car"; /*przekierowanie stringa za pomocą redirect*/
     }
 
+    @GetMapping("/delete/{id}")
+    String handledeleteCar(@PathVariable Long id){
+        carService.delete(id);
+        return "redirect:/mvc/car";
+    }
 }

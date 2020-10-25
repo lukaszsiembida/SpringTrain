@@ -29,7 +29,8 @@
             <td>Ubezpieczenie od</td>
             <td>Ubezpieczenie do</td>
             <td>Akcja</td>
-            <td>Edytuj</td>  <!--można go zostawić pusty-->
+            <td></td>  <!--można go zostawić pusty Edytuj-->
+            <td></td> <!--Usuń-->
         </tr>
         </thead>
         <tbody>
@@ -54,6 +55,9 @@
             </td>
             <td>
                 <a th:href="@{/mvc/car/edit/} + ${car.id}">Edytuj</a>
+            </td>
+            <td>
+                <a th:href="@{/mvc/car/delete/} + ${car.id}">Usuń</a>
             </td>
         </tr>
         </tbody>
