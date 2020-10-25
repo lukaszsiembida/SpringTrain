@@ -13,6 +13,8 @@
     </style>
 </head>
 <body>
+    <a th:href="@{/mvc/car/add}">Dodaj nowy samochód</a>
+
    <!-- <h2 th:unless="${cars.size()>0}">Brak samochodów w wypożyczalni</h2>-->
     <h2 th:if="${#lists.isEmpty(cars)}">Brak samochodów w wypożyczalni</h2>
 
@@ -27,6 +29,7 @@
             <td>Ubezpieczenie od</td>
             <td>Ubezpieczenie do</td>
             <td>Akcja</td>
+            <td>Edytuj</td>  <!--można go zostawić pusty-->
         </tr>
         </thead>
         <tbody>
@@ -48,6 +51,9 @@
             <td>
                 <span th:if="${todayDate.isAfter(car.insuredTo)}">Brak ubezpieczenia</span>
                 <span th:unless="${todayDate.isAfter(car.insuredTo)}">Brak potrzebnych akcji</span>
+            </td>
+            <td>
+                <a th:href="@{/mvc/car/edit/} + ${car.id}">Edytuj</a>
             </td>
         </tr>
         </tbody>
