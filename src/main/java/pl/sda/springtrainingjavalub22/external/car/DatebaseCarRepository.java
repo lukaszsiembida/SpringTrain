@@ -1,6 +1,7 @@
 package pl.sda.springtrainingjavalub22.external.car;
 
 import org.springframework.stereotype.Component;
+import pl.sda.springtrainingjavalub22.api.model.SearchParams;
 import pl.sda.springtrainingjavalub22.domain.car.Car;
 import pl.sda.springtrainingjavalub22.domain.car.CarRepository;
 
@@ -9,7 +10,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Component
-public class DateBaseCarRepository implements CarRepository {
+public class DatebaseCarRepository implements CarRepository {
 
     JpaCarRepository jpaCarRepository;
 
@@ -62,5 +63,11 @@ public class DateBaseCarRepository implements CarRepository {
                         .insuredFrom(car.getInsuredFrom())
                         .insuredTo(car.getInsuredTo()).build())
                 .build();
+    }
+
+    @Override
+    public List<Car> findByParams(SearchParams searchParams) {
+        return jpaCarRepository.findBasedOnSearchParams(searchParams).stream()
+                .map(this::toDomain).collect(Collectors.toList());
     }
 }

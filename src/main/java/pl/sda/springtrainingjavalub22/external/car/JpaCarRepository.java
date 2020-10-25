@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface JpaCarRepository extends JpaRepository<CarEntity, Long> {
+public interface JpaCarRepository extends JpaRepository<CarEntity, Long>, CustomDatabaseCarRepository {
 
     //query method
 

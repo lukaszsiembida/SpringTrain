@@ -2,6 +2,7 @@ package pl.sda.springtrainingjavalub22.domain.car;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import pl.sda.springtrainingjavalub22.api.model.SearchParams;
 import pl.sda.springtrainingjavalub22.exception.AlreadyExistException;
 
 import java.util.List;
@@ -35,6 +36,10 @@ public class CarService {
 
     public void delete(Long id) {
         carRepository.delete(id);
+    }
+
+    public List<Car> findByParams(SearchParams searchParams){
+        return carRepository.findByParams(searchParams);
     }
 
 }
