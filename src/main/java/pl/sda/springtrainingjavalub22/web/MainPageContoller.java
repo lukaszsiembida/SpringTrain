@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
+import pl.sda.springtrainingjavalub22.config.CompanyInfo;
 import pl.sda.springtrainingjavalub22.domain.car.Car;
 import pl.sda.springtrainingjavalub22.domain.car.CarService;
 
@@ -15,7 +16,8 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class MainPageContoller {
 
-    private CarService carService;
+    private CarService carService; // wstrzykiwanie
+    private CompanyInfo companyInfo; // wstrzykiwanie
 
     @GetMapping("/")
     ModelAndView displayMainPage() {
@@ -25,6 +27,7 @@ public class MainPageContoller {
         ModelAndView mav = new ModelAndView();
         mav.addObject("date", LocalDate.now().toString());
         mav.addObject("manufacturers", manufacturers);
+        mav.addObject("info", companyInfo);
 
         mav.setViewName("main.html");
         return mav;

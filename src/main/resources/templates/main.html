@@ -5,8 +5,12 @@
     <title>Wypożyczalnia aut</title>
 </head>
 <body>
-    <h1>Wypożyczalnia aut</h1>
-<h3>Dziś jest <span th:text="${date}"></span></h3>  <!-- th ozn. że pochodzi od thymeleaf-->
+    <p><span th:text="${info.name}"/></p>
+    <p><span th:text="${info.address.street}"/><span th:text="${info.address.number}"/></p>
+    <p><span th:text="${info.address.city}"/></p>
+    <p><span th:text="${info.openingHours.start}"/><span th:text="${info.openingHours.end}"/></p>
+
+    <h3>Dziś jest <span th:text="${date}"></span></h3>  <!-- th ozn. że pochodzi od thymeleaf-->
 
     <div th:replace="fragments/navigation :: navigation"></div> <!--ścieżka  nazwa elementu-->
 
