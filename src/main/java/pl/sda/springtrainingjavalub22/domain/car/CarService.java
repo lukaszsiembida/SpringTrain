@@ -38,7 +38,7 @@ public class CarService {
         carRepository.delete(id);
     }
 
-    public List<Car> findByParams(SearchParams searchParams){
+    public List<Car> searchByParams(SearchParams searchParams){
         return carRepository.findByParams(searchParams);
     }
 

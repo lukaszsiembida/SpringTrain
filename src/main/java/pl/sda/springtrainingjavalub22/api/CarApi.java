@@ -30,7 +30,7 @@ public class CarApi {
 
     @GetMapping("/search")
     public List<Car> getByParams(@RequestBody SearchParams searchParams) {
-        return carService.findByParams(searchParams);
+        return carService.searchByParams(searchParams);
     }
 
     @GetMapping("/{carId}")
