@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Wypożyczalnia aut</title>
+</head>
+<body>
+    <h1>Wypożyczalnia aut</h1>
+<h3>Dziś jest <span th:text="${date}"></span></h3>  <!-- th ozn. że pochodzi od thymeleaf-->
+    <h2>Lista marek aut:</h2>
+    <ul>
+        <li th:each="manufacturer: ${manufacturers}">
+            <span th:text="${manufacturer}"/>
+        </li>
+    </ul>
+
+
+</body>
+</html>

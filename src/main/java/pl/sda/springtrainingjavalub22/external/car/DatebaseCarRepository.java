@@ -1,5 +1,6 @@
 package pl.sda.springtrainingjavalub22.external.car;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 import pl.sda.springtrainingjavalub22.api.model.SearchParams;
 import pl.sda.springtrainingjavalub22.domain.car.Car;
@@ -9,6 +10,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@AllArgsConstructor
 @Component
 public class DatebaseCarRepository implements CarRepository {
 
