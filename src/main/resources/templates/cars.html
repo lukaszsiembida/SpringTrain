@@ -13,6 +13,7 @@
     </style>
 </head>
 <body>
+<div th:replace="fragments/navigation :: navigation"></div>
     <a th:href="@{/mvc/car/add}">Dodaj nowy samochód</a>
 
     <form method="post" th:action="@{/mvc/car/search}" th:object="${params}">
@@ -71,5 +72,6 @@
         </tr>
         </tbody>
     </table>
+<footer th:replace="fragments/navigation :: footer"></footer>
 </body>
 </html>
