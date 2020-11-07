@@ -46,8 +46,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/**").permitAll()
-                .and().formLogin()
-                .successForwardUrl("/mvc/car")
+                .and()
+                .formLogin()
+                .loginPage("/mvc/login")
+                .loginProcessingUrl("/mvc/authenticate")
+                .defaultSuccessUrl("/mvc/car")
                 .and().csrf().disable();
     }
 }
