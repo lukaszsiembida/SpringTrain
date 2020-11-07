@@ -14,5 +14,4 @@ public class UserService {
         user.encodePassword(passwordEncoder);
         userRepository.create(user);
     }
-
 }
