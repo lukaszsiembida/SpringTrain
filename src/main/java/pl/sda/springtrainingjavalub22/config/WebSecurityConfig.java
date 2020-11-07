@@ -48,9 +48,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/**").permitAll()
                 .and()
                 .formLogin()
-                .loginPage("/mvc/login")
-                .loginProcessingUrl("/mvc/authenticate")
-                .defaultSuccessUrl("/mvc/car")
+                    .loginPage("/mvc/login")
+                    .loginProcessingUrl("/mvc/authenticate")
+                    .defaultSuccessUrl("/mvc/car")
+                .and()
+                .logout()
+                    .logoutUrl("/mvc/login")
+                    .invalidateHttpSession(true)
+                    .deleteCookies("JSESSIONID")
                 .and().csrf().disable();
     }
 }
