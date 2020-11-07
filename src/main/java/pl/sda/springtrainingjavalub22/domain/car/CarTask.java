@@ -33,6 +33,4 @@ public class CarTask {
         return car.getInsuredTo().isBefore(now) ||
                 ChronoUnit.DAYS.between(now, car.getInsuredTo()) < 10;
     }
-
-
 }

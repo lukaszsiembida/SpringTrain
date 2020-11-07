@@ -2,7 +2,6 @@ package pl.sda.springtrainingjavalub22.domain.car;
 
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.stereotype.Service;
 import pl.sda.springtrainingjavalub22.api.validator.InsurancePeriod;
 import pl.sda.springtrainingjavalub22.api.validator.ManufacturerAndModel;
 import pl.sda.springtrainingjavalub22.api.validator.Vin;
